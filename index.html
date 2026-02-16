@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athang Fashion Gallery | Priyanka Soni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --light-gold: #f4e8d1;
+            --whatsapp-green: #25D366;
+            --insta-pink: #E1306C;
+            --dark-text: #2d2d2d;
+            --bg-cream: #fffaf5;
+            --white: #ffffff;
+            --soft-gold-bg: #fdf8ef;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+        }
+
+        .location-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        /* --- Hero --- */
+        .hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 15px; }
+
+        /* --- Buttons --- */
+        .btn-insta {
+            background-color: var(--insta-pink);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-wa-sm, .btn-drive {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.3s;
+            width: 90%;
+        }
+
+        .btn-wa-sm { background-color: var(--whatsapp-green); color: white; }
+        .btn-drive { background-color: var(--white); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
+        .btn-drive:hover { background-color: var(--primary-gold); color: white; }
+
+        /* --- Category Grid --- */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px 5%;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid var(--light-gold);
+        }
+
+        .card img { width: 100%; height: 280px; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .card-info h3 { font-family: 'Playfair Display', serif; color: var(--primary-gold); margin-bottom: 15px; }
+
+        /* --- About Priyanka Section --- */
+        .about-section {
+            background-color: var(--soft-gold-bg);
+            padding: 60px 10%;
+            margin: 40px 5%;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--light-gold);
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #444;
+            font-style: italic;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-gold);
+            border: 1px solid var(--light-gold);
+        }
+
+        /* --- Floating WA --- */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: var(--whatsapp-green); color: white; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 2000; text-decoration: none;
+        }
+
+        footer { text-align: center; padding: 40px; background: var(--white); border-top: 1px solid var(--light-gold); }
+
+        @media (max-width: 600px) { 
+            .hero-content h2 { font-size: 1.8rem; }
+            .about-section { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/917987399674" class="whatsapp-float" target="_blank">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.651zm6.59-4.819c1.414.843 2.99 1.287 4.6 1.288 5.125 0 9.293-4.168 9.296-9.293 0-2.484-.968-4.819-2.726-6.578-1.758-1.758-4.094-2.726-6.578-2.726-5.125 0-9.292 4.168-9.295 9.293 0 1.762.496 3.486 1.433 4.969l-.965 3.525 3.635-.953zm10.372-6.216c-.273-.137-1.618-.799-1.868-.891-.25-.091-.433-.137-.615.137-.183.273-.706.891-.865 1.073-.159.182-.319.205-.592.068-.273-.137-1.15-.424-2.19-1.353-.809-.721-1.355-1.612-1.514-1.886-.159-.273-.017-.421.12-.558.123-.122.273-.319.41-.478.136-.159.182-.273.273-.455.091-.182.045-.342-.023-.478-.068-.137-.615-1.482-.843-2.028-.222-.533-.466-.46-.615-.468-.159-.007-.341-.009-.523-.009s-.478.068-.728.342c-.25.273-.956.934-.956 2.278s.979 2.642 1.115 2.824c.137.182 1.928 2.945 4.671 4.127.653.282 1.163.45 1.56.577.656.208 1.253.179 1.726.108.527-.079 1.618-.662 1.846-1.301.228-.638.228-1.186.159-1.301-.069-.115-.251-.183-.524-.319z"/></svg>
+    </a>
+
+    <header>
+        <div class="logo-area">
+            <img src="https://ibb.co/3J3sfQd" alt="Athang Logo" style="height: 80px; margin-bottom: 10px;">
+            <h1>Athang Fashion Gallery</h1>
+            <p class="location-tag">Bangalore • Lalbarra</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Luxury Heritage</h2>
+            <a href="https://www.instagram.com/afg_stylish_savings/" class="btn-insta" target="_blank">Follow on Instagram</a>
+        </div>
+    </section>
+
+    <div class="category-grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Sarees">
+            <div class="card-info">
+                <h3>Exclusive Sarees</h3>
+                <a href="https://drive.google.com/drive/folders/136KjoKoORImzH4_7gjfXwnAQV1zY8Bbd?usp=drive_link" class="btn-drive" target="_blank">📂 View Collection (Drive)</a>
+                <a href="https://wa.me/917987399674?text=Hi%20Priyanka,%20I'm%20interested%20in%20Sarees" class="btn-wa-sm">Inquire on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Designer Suits">
+            <div class="card-info">
+                <h3>Designer Suits</h3>
+                <a href="https://drive.google.com/drive/folders/1ZYyAhEb0eoPj4owuFHUh-hSYss1Rk-IU?usp=drive_link" class="btn-drive" target="_blank">📂 View Collection (Drive)</a>
+                <a href="https://wa.me/917987399674?text=Hi%20Priyanka,%20I'm%20interested%20in%20Suits" class="btn-wa-sm">Inquire on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=600" alt="Jewelry">
+            <div class="card-info">
+                <h3>1gm Gold Jewelry</h3>
+                <a href="https://drive.google.com/drive/folders/1TsqsSdZvsMmU3A9PIimluy0_Mzhnzg05?usp=drive_link" class="btn-drive" target="_blank">📂 View Collection (Drive)</a>
+                <a href="https://wa.me/917987399674?text=Hi%20Priyanka,%20I'm%20interested%20in%20Jewelry" class="btn-wa-sm">Inquire on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=600" alt="Oriflame">
+            <div class="card-info">
+                <h3>Oriflame Beauty</h3>
+                <a href="https://drive.google.com/drive/folders/1oLMzkqrV7-FREx26BtoNLe3dyXiw2qbB?usp=drive_link" class="btn-drive" target="_blank">📂 View Catalog (Drive)</a>
+                <a href="https://wa.me/917987399674?text=Hi%20Priyanka,%20I%20want%20to%20order%20Oriflame%20products" class="btn-wa-sm">Inquire on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h2>Meet the Founder</h2>
+            <p>"As a working mother, I understand the value of quality and trust. At Athang Fashion Gallery, I bring you premium traditions by sourcing directly from manufacturers—eliminating middlemen to give you the best possible rates without compromising on elegance."</p>
+            <p><strong>— Priyanka Soni</strong></p>
+            
+            <div class="badge-container">
+                <div class="badge">✨ Direct from Manufacturer</div>
+                <div class="badge">💎 Handpicked Quality</div>
+                <div class="badge">👩‍💼 Woman-Led Business</div>
+                <div class="badge">📍 Lalbarra, Bangalore</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Athang Fashion Gallery</strong></p>
+        <p>Lalbarra, Bangalore • +91 79873 99674</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #999;">&copy; 2024 Managed by Priyanka Soni</p>
+    </footer>
+
+</body>
+</html>
